@@ -1,24 +1,29 @@
 import test from '../components/common/test'
+import admin_dashboard from '../pages/admin/admin_dashboard'
+import Books from '../pages/admin/Books'
+import Members from '../pages/admin/Members'
+import SuperDashboard from '../pages/superadmin/SuperDashboard'
+import SuperOrganisations from '../pages/superadmin/SuperOrganisations'
+import OrganisationDetails from '../pages/superadmin/OrganisationDetails'
 // ── Shared pages (multiple roles) ──────────────────────────────────────────
 const Dashboard = test
 const Settings = test
 const Unauthorized = test
 
 // ── User pages ─────────────────────────────────────────────────────────────
-const UserProfile =test
-const UserOrders  = test
+const UserProfile = test
+const UserOrders = test
 const UserReports = test
-const HelpCenter  = test
+const HelpCenter = test
 // ── Admin pages ────────────────────────────────────────────────────────────
 const AdminUsers = test
 const AdminOrders = test
 const AdminAnalytics = test
 const AdminProducts = test
-const AdminTickets =test
+const AdminTickets = test
 const AdminRoles = test
 
 // ── SuperAdmin pages ───────────────────────────────────────────────────────
-const SuperTenants = test
 const SuperLogs = test
 const SuperAdmins = test
 const SuperPermissions = test
@@ -37,7 +42,9 @@ export const ROUTE_CONFIG = [
   { path: '/help', component: HelpCenter, roles: ['user'], label: 'Help Center' },
 
   // ── Admin ────────────────────────────────────────────────────────────────
-  { path: '/admin/users', component: AdminUsers, roles: ['admin', 'superadmin'], label: 'Users' },
+  { path: '/admin/dashboard', component: admin_dashboard, roles: ['admin', 'superadmin'], label: 'Admin Dashboard' },
+  { path: '/admin/books', component: Books, roles: ['admin', 'superadmin'], label: 'Books' },
+  { path: '/admin/members', component: Members, roles: ['admin', 'superadmin'], label: 'Members' },
   { path: '/admin/orders', component: AdminOrders, roles: ['admin', 'superadmin'], label: 'Orders' },
   { path: '/admin/analytics', component: AdminAnalytics, roles: ['admin', 'superadmin'], label: 'Analytics' },
   { path: '/admin/products', component: AdminProducts, roles: ['admin', 'superadmin'], label: 'Products' },
@@ -45,7 +52,10 @@ export const ROUTE_CONFIG = [
   { path: '/admin/roles', component: AdminRoles, roles: ['superadmin'], label: 'Roles' },
 
   // ── SuperAdmin ───────────────────────────────────────────────────────────
-  { path: '/super/tenants', component: SuperTenants, roles: ['superadmin'], label: 'All Tenants' },
+
+  { path: '/superadmin/dashboard', component: SuperDashboard, roles: ['superadmin'], label: 'Overview' },
+  { path: '/super/organisations', component: SuperOrganisations, roles: ['superadmin'], label: 'Organisations' },
+  { path: '/super/organisations/:id', component: OrganisationDetails, roles: ['superadmin'], label: 'Organisation Details' },
   { path: '/super/logs', component: SuperLogs, roles: ['superadmin'], label: 'System Logs' },
   { path: '/super/admins', component: SuperAdmins, roles: ['superadmin'], label: 'Admins' },
   { path: '/super/permissions', component: SuperPermissions, roles: ['superadmin'], label: 'Permissions' },

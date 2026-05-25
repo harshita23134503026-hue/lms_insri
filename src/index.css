@@ -54,4 +54,6 @@
 
 body {
   margin: 0;
+  background: linear-gradient(135deg, #F8F9FA 0%, #FFF4D7 100%);
+  background-attachment: fixed;
 }
