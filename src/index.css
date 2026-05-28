@@ -57,3 +57,30 @@ body {
   background: linear-gradient(135deg, #F8F9FA 0%, #FFF4D7 100%);
   background-attachment: fixed;
 }
+
+/* Hide native datepicker indicators to render clean Lucide icons */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+/* Custom scrollbar to avoid ugly default gray browser scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #FBBF24;
+  border-radius: 4px;
+}
+

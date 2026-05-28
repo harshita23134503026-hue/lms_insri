@@ -48,7 +48,7 @@ const Members = () => {
   });
 
   return (
-    <div className="px-0 py-4 sm:p-6 md:p-8 space-y-6 w-full max-w-[1600px] mx-auto font-sans min-h-screen bg-[#F9FAFBB2]">
+    <div className="px-0 py-0 sm:p-0 md:p-0 space-y-6 w-full max-w-[1600px] mx-auto font-sans min-h-screen ">
       
       {/* Filter and Stats Dash */}
       <div 
@@ -130,7 +130,7 @@ const Members = () => {
       <div className="bg-[#FFFFFF80] rounded-[40px] p-6 md:p-8 shadow-sm border border-white">
         {filteredMembers.length > 0 ? (
           /* Grid of Cards */
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredMembers.map(member => (
               <MemberCard 
                 key={member.id} 

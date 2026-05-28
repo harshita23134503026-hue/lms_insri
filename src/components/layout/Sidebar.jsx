@@ -9,6 +9,7 @@ import {
 import { useAuth } from '../../context/AuthContext'
 import { useRole } from '../../hook/useRole'
 import { NAV_CONFIG, SIDEBAR_CONFIG } from '../../config/navConfig'
+import LendReturnModal from '../admin/LendReturnModal'
 
 const ICON_MAP = {
   LayoutDashboard, UserCircle, ShoppingBag, BarChart2, HelpCircle,
@@ -31,6 +32,7 @@ const ACCENT_BAR = {
 export default function Sidebar({ open, onClose }) {
   const [isTextExpanded, setIsTextExpanded] = useState(true)
   const { currentUser } = useAuth()
+  const [isLendModalOpen, setIsLendModalOpen] = useState(false)
   const { role } = useRole()
   const navItems = NAV_CONFIG[role] ?? []
 
@@ -123,7 +125,10 @@ export default function Sidebar({ open, onClose }) {
               {/* Action Button */}
               {actionButton && (
                 <div className="px-5 pb-5 shrink-0">
-                  <button className={`w-full py-3 ${actionButton.bgColor || 'bg-[#FDE047]'} ${actionButton.hoverColor || 'hover:bg-[#FACC15]'} active:scale-[0.98] rounded-full font-extrabold text-[11px] tracking-wider ${actionButton.textColor || 'text-slate-800'} flex items-center justify-center gap-2 transition-all shadow-sm cursor-pointer`}>
+                  <button 
+                    onClick={() => setIsLendModalOpen(true)}
+                    className={`w-full py-3 ${actionButton.bgColor || 'bg-[#FDE047]'} ${actionButton.hoverColor || 'hover:bg-[#FACC15]'} active:scale-[0.98] rounded-full font-extrabold text-[11px] tracking-wider ${actionButton.textColor || 'text-slate-800'} flex items-center justify-center gap-2 transition-all shadow-sm cursor-pointer`}
+                  >
                     <ActionIcon size={14} className={`${actionButton.iconColor || 'text-orange-600'} shrink-0`} strokeWidth={2.5} />
                     {actionButton.label}
                   </button>
@@ -167,6 +172,7 @@ export default function Sidebar({ open, onClose }) {
               </nav>
             </aside>
           </div>
+          <LendReturnModal open={isLendModalOpen} onClose={() => setIsLendModalOpen(false)} />
         </>
       )
     }
@@ -197,7 +203,10 @@ export default function Sidebar({ open, onClose }) {
           {/* Action Button */}
           {actionButton && (
             <div className="px-5 pb-5 shrink-0">
-              <button className={`w-full py-3 ${actionButton.bgColor || 'bg-[#FDE047]'} ${actionButton.hoverColor || 'hover:bg-[#FACC15]'} active:scale-[0.98] rounded-full font-extrabold text-[11px] tracking-wider ${actionButton.textColor || 'text-slate-800'} flex items-center justify-center gap-2 transition-all shadow-sm cursor-pointer`}>
+              <button 
+                onClick={() => setIsLendModalOpen(true)}
+                className={`w-full py-3 ${actionButton.bgColor || 'bg-[#FDE047]'} ${actionButton.hoverColor || 'hover:bg-[#FACC15]'} active:scale-[0.98] rounded-full font-extrabold text-[11px] tracking-wider ${actionButton.textColor || 'text-slate-800'} flex items-center justify-center gap-2 transition-all shadow-sm cursor-pointer`}
+              >
                 <ActionIcon size={14} className={`${actionButton.iconColor || 'text-orange-600'} shrink-0`} strokeWidth={2.5} />
                 {actionButton.label}
               </button>
@@ -246,6 +255,7 @@ export default function Sidebar({ open, onClose }) {
             ))}
           </nav>
         </aside>
+        <LendReturnModal open={isLendModalOpen} onClose={() => setIsLendModalOpen(false)} />
       </>
     )
   }
