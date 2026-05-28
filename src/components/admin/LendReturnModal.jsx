@@ -44,17 +44,9 @@ export default function LendReturnModal({ open, onClose }) {
         className="bg-white rounded-[26px] p-5 w-[390px] shadow-2xl border border-amber-100/10 flex flex-col relative max-h-[92vh] overflow-y-auto custom-scrollbar transform scale-100 transition-all duration-150 animate-[scaleUp_0.2s_ease-out]"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Icon */}
-        <button 
-          onClick={onClose} 
-          className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 hover:bg-slate-100 p-1.5 rounded-full transition-all duration-150 cursor-pointer"
-          aria-label="Close Modal"
-        >
-          <X size={15} />
-        </button>
-
-        {/* 1. Toggle Tabs */}
-        <div className="flex gap-2.5 mb-5 mt-1.5 shrink-0">
+        {/* Header: Tabs + Close Button in same row */}
+        <div className="flex items-center gap-2.5 mb-5 mt-1 shrink-0">
+          {/* Lend Book Tab */}
           <button
             type="button"
             onClick={() => handleTabChange('lend')}
@@ -67,6 +59,7 @@ export default function LendReturnModal({ open, onClose }) {
             Lend Book
           </button>
 
+          {/* Return Book Tab */}
           <button
             type="button"
             onClick={() => handleTabChange('return')}
@@ -77,6 +70,16 @@ export default function LendReturnModal({ open, onClose }) {
             }`}
           >
             Return Book
+          </button>
+
+          {/* Close (X) Button — placed after tabs, no overlap */}
+          <button
+            type="button"
+            onClick={onClose}
+            className="flex-shrink-0 text-slate-400 hover:text-slate-600 hover:bg-slate-100 p-1.5 rounded-full transition-all duration-150 cursor-pointer"
+            aria-label="Close Modal"
+          >
+            <X size={15} />
           </button>
         </div>
 
