@@ -9,69 +9,24 @@ export const NAV_CONFIG = {
   ],
 
   admin: [
-    { group: 'Main', label: 'Overview', path: '/admin/dashboard', icon: 'LayoutDashboard' },
-    { group: 'Main', label: 'Books', path: '/admin/books', icon: 'Package' },
-    { group: 'Main', label: 'Members', path: '/admin/members', icon: 'Users' },
+    { group: 'Main', label: 'Dashboard', path: '/dashboard', icon: 'LayoutDashboard' },
+    { group: 'Main', label: 'Users', path: '/admin/users', icon: 'Users' },
+    { group: 'Main', label: 'Orders', path: '/admin/orders', icon: 'ShoppingBag' },
+    { group: 'Main', label: 'Analytics', path: '/admin/analytics', icon: 'TrendingUp' },
+    { group: 'Manage', label: 'Products', path: '/admin/products', icon: 'Package' },
+    { group: 'Manage', label: 'Support Tickets', path: '/admin/tickets', icon: 'Ticket' },
+    { group: 'Manage', label: 'Roles', path: '/admin/roles', icon: 'Shield', locked: true },
     { group: 'System', label: 'Settings', path: '/settings', icon: 'Settings' },
-    { group: 'System', label: 'About', path: '/about', icon: 'HelpCircle' },
-    { group: 'System', label: 'Help & support', path: '/help', icon: 'LifeBuoy' },
   ],
 
   superadmin: [
-    { group: 'Main', label: 'Dashboard', path: '/superadmin/dashboard', icon: 'LayoutDashboard' },
-    { group: 'Main', label: 'Organisations', path: '/super/organisations', icon: 'Building2' },
-    { group: 'Main', label: 'Organisation Details', path: '/super/organisations/org-1', icon: 'Building' },
+    { group: 'Global', label: 'Dashboard', path: '/dashboard', icon: 'LayoutDashboard' },
+    { group: 'Global', label: 'All Tenants', path: '/super/tenants', icon: 'Building2' },
+    { group: 'Global', label: 'System Logs', path: '/super/logs', icon: 'ScrollText' },
+    { group: 'Control', label: 'Admins', path: '/super/admins', icon: 'UserCog' },
+    { group: 'Control', label: 'Permissions', path: '/super/permissions', icon: 'KeyRound' },
+    { group: 'Control', label: 'Billing', path: '/super/billing', icon: 'CreditCard' },
+    { group: 'Control', label: 'Feature Flags', path: '/super/flags', icon: 'Flag' },
+    { group: 'System', label: 'Settings', path: '/settings', icon: 'Settings' },
   ],
 }
-
-export const SIDEBAR_CONFIG = {
-  admin: {
-    logo: {
-      text: 'LMS',
-      icon: 'Package',
-      iconBg: 'bg-pink-50 border border-pink-100/50',
-      iconColor: 'text-pink-500 fill-pink-500/20',
-    },
-    actionButton: {
-      label: 'LEND / RETURN',
-      icon: 'Smartphone',
-      iconColor: 'text-orange-600',
-      bgColor: 'bg-[#FDE047]',
-      hoverColor: 'hover:bg-[#FACC15]',
-      textColor: 'text-slate-800',
-    },
-    layout: {
-      variant: 'floating',
-      rounded: 'rounded-[36px]',
-      margins: 'my-4 ml-4 mr-0',
-      width: 'w-60',
-      noMenuIcons: true,
-      activeBackground: 'bg-[#FEF3C7]/40',
-      activeIndicator: 'w-[4px] bg-[#FF7A00] rounded-l-full',
-    }
-  },
-  user: {
-    layout: {
-      variant: 'default',
-      width: 'w-56',
-    }
-  },
-  superadmin: {
-    logo: {
-      text: 'LMS',
-      icon: 'Package',
-      iconBg: 'bg-pink-50 border border-pink-100/50',
-      iconColor: 'text-pink-500 fill-pink-500/20',
-    },
-    layout: {
-      variant: 'floating',
-      rounded: 'rounded-[36px]',
-      margins: 'my-4 ml-4 mr-0',
-      width: 'w-60',
-      noMenuIcons: true,
-      activeBackground: 'bg-[#FEF3C7]/40',
-      activeIndicator: 'w-[4px] bg-[#FF7A00] rounded-l-full',
-    }
-  }
-}
-
