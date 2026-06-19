@@ -3,11 +3,13 @@ import { AuthProvider } from './context/AuthContext';
 import { ROUTE_CONFIG, Unauthorized } from './config/routeConfig';
 import DashboardLayout from './components/layout/DashboardLayout';
 import ProtectedRoute from './components/layout/ProtectedRoute';
-
+import SignUp from './pages/auth/SignUp'
+import Login from './pages/auth/Login'
 import Dashboard from "./pages/user/Dashboard";
 import UserProfile from "./pages/user/profile";
 import Wishlist from "./pages/user/wishlist";
 import Books from "./pages/user/books";
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -18,6 +20,8 @@ export default function App() {
 
           {/* Unauthorized page (no layout needed) */}
           <Route path="/unauthorized" element={<Unauthorized />} />
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/login" element={<Login/>}/>
 
           {/* All dashboard routes share the DashboardLayout */}
           <Route element={<DashboardLayout />}>
