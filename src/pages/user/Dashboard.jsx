@@ -8,7 +8,7 @@ import { Pause,Wallet,Mail, Heart } from "lucide-react";
 
 export default function Dashboard() {
   return (
-    <div className="p-6 bg-linear-to-r from-gray-100 to-yellow-100 min-h-screen">
+    <div className="pb-6">
 
       {/* Top Cards */}
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">        

@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import { ROUTE_CONFIG, Unauthorized } from './config/routeConfig';
-import DashboardLayout from './components/layout/DashboardLayout';
-import ProtectedRoute from './components/layout/ProtectedRoute';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import { ROUTE_CONFIG, Unauthorized } from "./config/routeConfig";
+import DashboardLayout from "./components/layout/DashboardLayout";
+import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 import Dashboard from "./pages/user/Dashboard";
 import UserProfile from "./pages/user/profile";
@@ -21,10 +21,14 @@ export default function App() {
 
           {/* All dashboard routes share the DashboardLayout */}
           <Route element={<DashboardLayout />}>
-             <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<UserProfile />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/books" element={<Books />} />
+            <Route path="/about" element={<div className="p-6 bg-white rounded-3xl shadow-sm min-h-screen">About LMS: Library Management System v1.0.0</div>} />
+            <Route path="/help" element={<div className="p-6 bg-white rounded-3xl shadow-sm min-h-screen">Help & Support: Contact support@college.edu</div>} />
             
-          
+
             {ROUTE_CONFIG.map(({ path, component: Component, roles }) => (
               <Route
                 key={path}
@@ -42,5 +46,5 @@ export default function App() {
         </Routes>
       </AuthProvider>
     </BrowserRouter>
-  )
+  );
 }

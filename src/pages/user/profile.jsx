@@ -4,7 +4,7 @@ import BookHistory from "../../components/Profile/BookHistory";
 
 export default function UserProfile() {
   return (
-    <div className="bg-linear-to-r from-gray-100 to-yellow-100 min-h-screen">
+    <div className="pb-6">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {/* LEFT SIDE */}

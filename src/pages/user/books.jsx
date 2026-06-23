@@ -11,8 +11,7 @@ export default function Books() {
     
 
   return (
-
-    <div className="flex flex-col rounded-[20px] bg-[#F5F5F5]  mx-auto bg-linear-to-r from-gray-150 min-h-screen to-yellow-100">
+    <div className="flex flex-col pb-6">
       
       <div className="shrink-0">
         <Navbar1 />
