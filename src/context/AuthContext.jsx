@@ -37,8 +37,25 @@ export function AuthProvider({ children }) {
   }
   const logout = () => setCurrentUser(null)
 
+  const login = (enrollmentNumber, password) => {
+    // Mock authentication:
+    // If enrollmentNumber contains 'super', login as superadmin.
+    // If enrollmentNumber contains 'admin', login as admin.
+    // Otherwise login as standard user.
+    if (enrollmentNumber.toLowerCase().includes('super')) {
+      setCurrentUser(MOCK_USERS.superadmin)
+      return { success: true, role: 'superadmin' }
+    } else if (enrollmentNumber.toLowerCase().includes('admin')) {
+      setCurrentUser(MOCK_USERS.admin)
+      return { success: true, role: 'admin' }
+    } else {
+      setCurrentUser(MOCK_USERS.user)
+      return { success: true, role: 'user' }
+    }
+  }
+
   return (
-    <AuthContext.Provider value={{ currentUser, switchRole, logout }}>
+    <AuthContext.Provider value={{ currentUser, switchRole, logout, login }}>
       {children}
     </AuthContext.Provider>
   )
